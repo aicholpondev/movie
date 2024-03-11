@@ -1,0 +1,10 @@
+export const API  = "https://api.themoviedb.org/3/movie/";
+export const POPULAR = "popular";
+export const TOP_RATED = "top_rated";
+export const NOW_PLAYING = "now_playing";
+export const UPCOMING = "upcoming";
+export const API_KEY = "?api_key=72315348c29a41a225bae93956036048";
+export const ACTORS = "/credits";
+export const PERSON = "https://api.themoviedb.org/3/person/";
+export const TRAILER = "/videos";
+export const MOVIE_PERSON = "/movie_credits";
