@@ -33,7 +33,7 @@ export default function Details(){
     // console.log(actors)
 
     useEffect(() => {
-        axios(API + TRAILER + API_KEY)
+        axios(API + id + TRAILER + API_KEY)
             .then(({data}) =>{
                 setTrailer(data.results)
             })
