@@ -8,3 +8,5 @@ export const ACTORS = "/credits";
 export const PERSON = "https://api.themoviedb.org/3/person/";
 export const TRAILER = "/videos";
 export const MOVIE_PERSON = "/movie_credits";
+export const LANG_RU ="&language=ru-RU";
+export const LANG_EN ="&language=en-EN";

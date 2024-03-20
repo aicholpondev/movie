@@ -4,15 +4,15 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {API, API_KEY, TOP_RATED} from "../../api/api";
 
-export default function TopRated(){
+export default function TopRated({language}){
 
     const [topRated,setTopRated] = useState([]);
     useEffect(() =>{
-        axios(API+TOP_RATED+API_KEY)
+        axios(API+TOP_RATED+API_KEY + language())
             .then(({data}) =>{
                 setTopRated(data.results)
             })
-    },[]);
+    },[language()]);
 
     return(
         <div className=" py-[50px]">

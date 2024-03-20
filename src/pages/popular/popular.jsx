@@ -1,19 +1,23 @@
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {API, API_KEY, POPULAR} from "../../api/api";
+import {API, API_KEY, LANG_EN, POPULAR} from "../../api/api";
 import Card from "../../components/UI/card/card";
 
 
-export default function Popular(){
+export default function Popular({language}){
 
     const [popular,setPopular] = useState([]);
+
+
+
+
     useEffect(() =>{
-        axios(API+POPULAR+API_KEY)
+        axios(API+POPULAR+API_KEY + language())
             .then(({data}) =>{
                 setPopular(data.results)
             })
-    },[]);
+    },[language()]);
 
     // console.log(popular)
 

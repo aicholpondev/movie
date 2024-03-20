@@ -4,15 +4,15 @@ import {API, API_KEY,  UPCOMING} from "../../api/api";
 import {MdOutlineArrowForwardIos} from "react-icons/md";
 import Card from "../../components/UI/card/card";
 
-export default function UpComing(){
+export default function UpComing({language}){
 
     const [upcoming,setUpComing] = useState([]);
     useEffect(() =>{
-        axios(API+UPCOMING+API_KEY)
+        axios(API+UPCOMING+API_KEY+ language())
             .then(({data}) =>{
                 setUpComing(data.results)
             })
-    },[]);
+    },[language()]);
     return(
         <div className=" py-[50px]">
             <div className="container">

@@ -5,15 +5,15 @@ import {API, API_KEY, NOW_PLAYING} from "../../api/api";
 import Card from "../../components/UI/card/card";
 
 
-export default function NowPlaying(){
+export default function NowPlaying({language}){
 
     const [nowPlaying,setNowPlaying] = useState([]);
     useEffect(() =>{
-        axios(API+NOW_PLAYING+API_KEY)
+        axios(API+NOW_PLAYING+API_KEY + language())
             .then(({data}) =>{
                 setNowPlaying(data.results)
             })
-    },[]);
+    },[language()]);
 
 
     return(

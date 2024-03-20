@@ -5,7 +5,7 @@ import {API_KEY, MOVIE_PERSON, PERSON} from "../../api/api";
 import Slider from "react-slick";
 
 
-export default function Person(){
+export default function Person({language}){
     const {id} = useParams();
     const [person,setPerson] = useState({});
     const [moviePerson,setMoviePerson] = useState([]);
@@ -13,17 +13,17 @@ export default function Person(){
 
 
     useEffect(() =>{
-        axios(PERSON + id + API_KEY).then(({data}) =>{
+        axios(PERSON + id + API_KEY + language()).then(({data}) =>{
             setPerson(data)
         })
-    },[]);
+    },[language()]);
 
     useEffect(() =>{
-        axios(PERSON + id + MOVIE_PERSON + API_KEY)
+        axios(PERSON + id + MOVIE_PERSON + API_KEY + language())
             .then(({data}) =>{
                 setMoviePerson(data.cast)
             })
-    },[])
+    },[language()])
 
     // console.log(person)
     console.log(moviePerson)

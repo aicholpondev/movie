@@ -7,7 +7,7 @@ import { MdAccessTimeFilled } from "react-icons/md";
 import Actors from "../actors/actors";
 import Trailer from "../trailer/Trailer";
 
-export default function Details(){
+export default function Details({language}){
 
 
     const [details,setDetails] = useState({})
@@ -16,10 +16,10 @@ export default function Details(){
     const [trailer,setTrailer] = useState([]);
 
     useEffect(() => {
-        axios(API + id + API_KEY).then(({data}) =>{
+        axios(API + id + API_KEY + language()).then(({data}) =>{
             setDetails(data)
         });
-    }, []);
+    }, [language()]);
 
     // console.log(id)
     // console.log(details)
