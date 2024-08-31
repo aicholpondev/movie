@@ -1,37 +1,23 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import En from "../components/json/En.json";
+import Ru from "../components/json/Ru.json";
 
+const language = localStorage.getItem("en")
 
-
-i18n.use(initReactI18next).init({
-        lng:"ru",
+i18n.use(initReactI18next)
+    .init({
+        lng:language ? "en" : "ru",
         fallbackLng: 'en',
         debug: true,
         resources: {
             en: {
-                translation: {
-                    Welcome: "Welcome to React and react-i18next",
-                    main:"Main",
-                    popular:"Popular",
-                    topRated:"Top Rated",
-                    nowPlaying:"Now playing",
-                    upComing:"Up coming"
-
-                }
+                translation:En,
             },
-
        ru: {
-            translation: {
-                Welcome: "Добро пожаловать в React и React-i18next",
-                main:"Главный",
-                popular:"Популярные",
-                topRated:"Лучшие",
-                nowPlaying:"Смотреть сейчас",
-                upComing:"Ожидаемые"
-            }
+            translation: Ru,
         }
     },
-
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         }

@@ -12,6 +12,7 @@ import NowPlaying from "./pages/now_paying/now_playing";
 import {useTranslation} from "react-i18next";
 import i18n from "./i18n/i18n";
 import {LANG_EN} from "./api/api";
+import movie from "../src/assets/img/movie.png"
 
 
 function App() {
@@ -40,12 +41,13 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<div><h2>{t("Welcome")}</h2>
-          <div>
-            <button onClick={() => changeLng("en")}>EN</button>
-          </div>
-            <div>
-              <button onClick={() => changeLng("ru")}>RU</button>
-            </div>
+
+          {/*<div>*/}
+          {/*  <button onClick={() => changeLng("en")}>EN</button>*/}
+          {/*</div>*/}
+          {/*  <div>*/}
+          {/*    <button onClick={() => changeLng("ru")}>RU</button>*/}
+          {/*  </div>*/}
 
           </div>
           }/>
@@ -57,6 +59,7 @@ function App() {
           <Route path="/details/:id" element={<Details language={language}/>}/>
           <Route path="/actors/:id" element={<Actors language={language}/>}/>
           <Route path="/person/:id" element={<Person language={language}/>}/>
+          {/*<Route path="/home" element={<Home/>}/>*/}
         </Routes>
       </Layout>
 

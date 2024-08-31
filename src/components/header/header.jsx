@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import russian from "../../assets/img/russian.png"
 import english from "../../assets/img/english.svg"
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {ThemeContext} from "../../darkMode/darkMode";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
@@ -13,7 +13,20 @@ import {useTranslation} from "react-i18next";
 export default function Header(){
 
     const {toggle,theme} = useContext(ThemeContext);
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
+    // const [showModal,setShowModal] = useContext(ThemeContext);
+    // const [showModalSearch,setShowModalSearch] = useState(false);
+    const [inpValue, setInpValue] = useState("");
+
+
+    const {t} = useTranslation();
+    const ru = localStorage.getItem ("ru");
+
+    function mealSearchOn(e) {
+        setInpValue(e.target.value);
+        // btnSearch(e);
+    }
+    function changeLng(lmg){}
     // console.log(theme)
     return(
         <header className=" sticky top-0 z-[100] bg-blue-900">
@@ -36,11 +49,19 @@ export default function Header(){
                             }
 
                         </button>
-                        <button>
-                            <IoMdSearch className="text-white text-2xl " /></button>
+
+                        <input
+                               className="p-1.5 rounded-lg outline-0 "
+                               type="text"
+                               placeholder="Find your movie"
+                               value={inpValue}
+                               onChange={(e) => mealSearchOn(e)} />
+                        <button type="submit"><IoMdSearch className="text-white text-2xl "/></button>
+                        {/*<button onClick={() => setShowModalSearch((prev) => !prev)}>*/}
+                        {/*    <IoMdSearch className="text-white text-2xl " /></button>*/}
                         <button>
                           <Modal img={ russian ? russian : english} />
-                            <img  className="w-[24px]" src={russian} alt="img"/>
+                            {/*<img  className="w-[24px]" src={russian} alt="img"/>*/}
                         </button>
                     </div>
                 </div>

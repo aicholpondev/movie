@@ -10,3 +10,5 @@ export const TRAILER = "/videos";
 export const MOVIE_PERSON = "/movie_credits";
 export const LANG_RU ="&language=ru-RU";
 export const LANG_EN ="&language=en-EN";
+export const    SEARCH = "search";
+export const QUERY ="&query";

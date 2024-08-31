@@ -7,7 +7,7 @@ export default function Layout({children}){
     const {theme} = useContext(ThemeContext);
 
     return(
-       <div className={`bg-[${theme === "light" ? "white" : "black"}] transition-[.5s] text-[${theme === "light" ? "black" : "white"}]`}>
+       <div className={`bg-[${theme === "light" ? "white" : "black"}] transition-[.5s] text,title-[${theme === "light" ? "black" : "white"}]`}>
            <Header/>
            <div className="min-h-[90vh]">
                {children}
@@ -17,3 +17,4 @@ export default function Layout({children}){
        </div>
     )
 }
+

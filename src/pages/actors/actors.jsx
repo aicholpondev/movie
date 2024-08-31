@@ -52,7 +52,7 @@ export default function Actors({actors}){
 
                             {
                                 actors.map((el) =>(
-                                    <div className="rounded-[20px] w-[300px] h-[90%] bg-[#c1c0c0]">
+                                    <div className="rounded-[20px]  w-[300px] h-[90%] bg-[#c1c0c0]">
 
                                            <img
                                                onClick={() =>  navigate(`/person/${el.id}`)}
